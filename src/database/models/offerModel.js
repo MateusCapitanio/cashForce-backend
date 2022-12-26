@@ -4,43 +4,18 @@ const offerModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			autoIncrement: true,
+			primaKey: true,
 		},
-		tax: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		tariff: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		adValorem: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		float: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		iof: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		expiresIn: {
-			type: DataTypes.DATE,
-			allowNull: false,
-		},
-		paymentStatusSponsor: {
-			type: DataTypes.TINYINT,
-		},
-		paymentStatusProvider: {
-			type: DataTypes.TINYINT,
-		},
-		orderId: {
-			type: DataTypes.INTEGER,
-		},
-		sponsorId: {
-			type: DataTypes.INTEGER,
-		},
+		tax: DataTypes.STRING,
+		tariff: DataTypes.STRING,
+		adValorem: DataTypes.STRING,
+		float: DataTypes.STRING,
+		iof: DataTypes.STRING,
+		expiresIn: DataTypes.DATE,
+		paymentStatusSponsor: DataTypes.TINYINT,
+		paymentStatusProvider: DataTypes.TINYINT,
+		orderId: DataTypes.INTEGER,
+		sponsorId: DataTypes.INTEGER,
 	}, {timestamps: false});
 	return offerTable;
 };

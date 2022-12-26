@@ -3,95 +3,31 @@ const BuyerModel = (sequelize, DataTypes) => {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
+			autoIncrement: true,
+			primaryKey: true
 		},
-		name: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		tradingName: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		cashforceTax: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		responsibleName: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		responsibleEmail: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		responsiblePosition: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		responsiblePhone: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		responsibleMobile: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		website: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		postalCode: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		address: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		number: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		complement: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		neighborhood: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		city: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		state: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		phoneNumber: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		situation: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		situationDate: {
-			type: DataTypes.STRING,
-			default: null,
-		},
-		cnpjId: {
-			type: DataTypes.INTEGER,
-			default: null,
-		},
-		confirm: {
-			type: DataTypes.TINYINT,
-			default: 1,
-		},
-		email: {
-			type: DataTypes.STRING,
-			default: null,
-		},
+		name: DataTypes.STRING,
+		tradingName: DataTypes.STRING,
+		cashforceTax: DataTypes.STRING,
+		responsibleName: DataTypes.STRING,
+		responsibleEmail: DataTypes.STRING,
+		responsiblePosition: DataTypes.STRING,
+		responsiblePhone: DataTypes.STRING,
+		responsibleMobile: DataTypes.STRING,
+		website: DataTypes.STRING,
+		postalCode: DataTypes.STRING,
+		address: DataTypes.STRING,
+		number: DataTypes.STRING,
+		complement: DataTypes.STRING,
+		neighborhood: DataTypes.STRING,
+		city: DataTypes.STRING,
+		state: DataTypes.STRING,
+		phoneNumber: DataTypes.STRING,
+		situation: DataTypes.STRING,
+		situationDate: DataTypes.STRING,
+		cnpjId: DataTypes.INTEGER,
+		confirm: DataTypes.TINYINT,
+		email: DataTypes.STRING,
 	}, {timestamps: false});
 	return buyerTable;
 };

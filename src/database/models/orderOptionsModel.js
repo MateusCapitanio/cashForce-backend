@@ -4,27 +4,13 @@ const orderOptionsModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			autoIncrement: true,
+			primaryKey: true,
 		},
-		nDup: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		dVenc: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		vDup: {
-			type: DataTypes.STRING,
-			allowNull: false,
-		},
-		availableToMarket: {
-			type: DataTypes.TINYINT,
-			allowNull: false,
-		},
-		orderId: {
-			type: DataTypes.INTEGER,
-			allowNull: false,
-		},
+		nDup: DataTypes.STRING,
+		dVenc: DataTypes.STRING,
+		vDup: DataTypes.STRING,
+		availableToMarket: DataTypes.TINYINT,
+		orderId: DataTypes.INTEGER,
 	}, {timestamps: false});
 	return orderOptionsTable;
 };
