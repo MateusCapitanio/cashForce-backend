@@ -2,85 +2,53 @@
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.createTable('Buyers', { 
+		await queryInterface.createTable('Orders', { 
 			id: {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
 			},
-			name: {
+			orderNfId: {
 				type: Sequelize.STRING,
 				allowNull: false,
 			},
-			tradingName: {
+			orderNumber: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
+			orderPath: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			cashforceTax: {
+			orderFileName: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			responsibleName: {
+			orderOriginalName: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			responsibleEmail: {
+			emissionDate: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			responsiblePosition: {
+			pdfFile: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			responsiblePhone: {
+			emitedTo: {
+				type: Sequelize.STRING,
+				allowNull: false,
+			},
+			nNf: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			responsibleMobile: {
+			CTE: {
 				type: Sequelize.STRING,
 				default: null,
 			},
-			website: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			postalCode: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			address: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			number: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			complement: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			neighborhood: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			city: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			state: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			phoneNumber: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			situation: {
-				type: Sequelize.STRING,
-				default: null,
-			},
-			situationDate: {
+			value: {
 				type: Sequelize.STRING,
 				default: null,
 			},
@@ -96,11 +64,35 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				default: null,
 			},
-			confirm: {
-				type: Sequelize.TINYINT(1),
-				default: 1,
+			userId: {
+				type: Sequelize.INTEGER(11),
+				default: null,
 			},
-			email: {
+			buyerId: {
+				type: Sequelize.INTEGER(11),
+				default: null,
+			},
+			providerId: {
+				type: Sequelize.INTEGER(11),
+				default: null,
+			},
+			orderStatusBuyer: {
+				type: Sequelize.STRING,
+				default: '0',
+			},
+			orderStatusProvider: {
+				type: Sequelize.STRING,
+				default: '0',
+			},
+			deliveryReceipt: {
+				type: Sequelize.STRING,
+				default: null,
+			},
+			cargoPackingList: {
+				type: Sequelize.STRING,
+				default: null,
+			},
+			deliveryCtrc: {
 				type: Sequelize.STRING,
 				default: null,
 			},
@@ -108,6 +100,6 @@ module.exports = {
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.dropTable('Buyers');
+		await queryInterface.dropTable('Orders');
 	}
 };

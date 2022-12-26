@@ -3,7 +3,6 @@ const orderOptionsModel = (sequelize, DataTypes) => {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			autoIncrement: true,
 			primaryKey: true,
 		},
 		nDup: DataTypes.STRING,

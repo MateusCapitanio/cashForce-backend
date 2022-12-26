@@ -1,9 +1,8 @@
-const orderOptionsModel = (sequelize, DataTypes) => {
-	const orderOptionsTable = sequelize.define('Order', {
+const orderModel = (sequelize, DataTypes) => {
+	const orderTable = sequelize.define('Order', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			autoIncrement: true,
 			primaryKey: true,
 		},
 		orderNfId: DataTypes.STRING,
@@ -27,7 +26,7 @@ const orderOptionsModel = (sequelize, DataTypes) => {
 		cargoPackingList: DataTypes.STRING,
 		deliveryCtrc: DataTypes.STRING,
 	}, {timestamps: false});
-	return orderOptionsTable;
+	return orderTable;
 };
 
-module.exports = orderOptionsModel;
+module.exports = orderModel;

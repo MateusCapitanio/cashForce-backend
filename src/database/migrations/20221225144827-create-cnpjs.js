@@ -5,7 +5,8 @@ module.exports = {
 		await queryInterface.createTable('Cnpjs', { 
 			id: {
 				type: Sequelize.INTEGER(11),
-				allowNull: false
+				allowNull: false,
+				primaryKey: true,
 			},
 			cnpj: {
 				type: Sequelize.STRING,

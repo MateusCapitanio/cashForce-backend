@@ -6,7 +6,7 @@ module.exports = {
 			id: {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
-				autoIncrement: true,
+				primaryKey: true,
 			},
 			nDup: {
 				type: Sequelize.STRING,
@@ -24,6 +24,14 @@ module.exports = {
 				type: Sequelize.TINYINT(1),
 				allowNull: false,
 				default: 1,
+			},
+			createdAt: {
+				allowNull: false,
+				type: Sequelize.DATE,
+			},
+			updatedAt: {
+				allowNull: false,
+				type: Sequelize.DATE,
 			},
 			orderId: {
 				type: Sequelize.INTEGER(11),
