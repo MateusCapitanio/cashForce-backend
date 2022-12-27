@@ -11,6 +11,7 @@ module.exports = {
 			orderNfId: {
 				type: Sequelize.STRING,
 				allowNull: false,
+				unique: true,
 			},
 			orderNumber: {
 				type: Sequelize.STRING,
@@ -19,14 +20,17 @@ module.exports = {
 			orderPath: {
 				type: Sequelize.STRING,
 				default: null,
+				unique: true,
 			},
 			orderFileName: {
 				type: Sequelize.STRING,
 				default: null,
+				unique: true,
 			},
 			orderOriginalName: {
 				type: Sequelize.STRING,
 				default: null,
+				unique: true,
 			},
 			emissionDate: {
 				type: Sequelize.STRING,
@@ -96,7 +100,11 @@ module.exports = {
 				type: Sequelize.STRING,
 				default: null,
 			},
-		});
+		})
+			.then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))
+			.then(() => queryInterface.addIndex('orders', ['buyerId'], { name:  'buyerId', }))
+			.then(() => queryInterface.addIndex('orders', ['providerId'], { name:  'providerId', }))
+			.then(() => queryInterface.addIndex('orders', ['cnpjId'], { name:  'cnpjId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {

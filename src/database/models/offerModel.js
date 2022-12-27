@@ -3,7 +3,7 @@ const offerModel = (sequelize, DataTypes) => {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			primaKey: true,
+			primaryKey: true,
 		},
 		tax: DataTypes.STRING,
 		tariff: DataTypes.STRING,

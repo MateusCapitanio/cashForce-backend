@@ -54,7 +54,9 @@ module.exports = {
 			sponsorId: {
 				type: Sequelize.INTEGER,
 			},
-		});
+		})
+			.then(() => queryInterface.addIndex('offers', ['orderId'], { name:  'orderId', }))
+			.then(() => queryInterface.addIndex('offers', ['sponsorId'], { name:  'sponsorId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {

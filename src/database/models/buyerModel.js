@@ -1,3 +1,5 @@
+const { Cnpj } = require('../models');
+
 const BuyerModel = (sequelize, DataTypes) => {
 	const buyerTable = sequelize.define('Buyer', {
 		id: {
@@ -27,7 +29,12 @@ const BuyerModel = (sequelize, DataTypes) => {
 		cnpjId: DataTypes.INTEGER,
 		confirm: DataTypes.TINYINT,
 		email: DataTypes.STRING,
-	}, {timestamps: false});
+	}, { timestamps: false, });
+
+	// buyerTable.associate = (models) => {
+	// 	buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+	// };
+
 	return buyerTable;
 };
 

@@ -1,5 +1,7 @@
 'use strict';
 
+const { Cnpj } = require('../models');
+
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		await queryInterface.createTable('buyers', { 
@@ -104,7 +106,7 @@ module.exports = {
 				type: Sequelize.STRING,
 				default: null,
 			},
-		});
+		}).then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
 	},
 
 	down: async (queryInterface, Sequelize) => {

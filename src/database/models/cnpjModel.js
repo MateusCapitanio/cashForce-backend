@@ -5,9 +5,17 @@ const cnpjModel = (sequelize, DataTypes) => {
 			primaryKey: true,
 			allowNull: false,
 		},
-		cnpj: DataTypes.STRING,
+		cnpj: {
+			type: DataTypes.STRING,
+			unique: true,
+		},
 		companyType: DataTypes.STRING,
 	}, {timestamps: false});
+
+	// cnpjTable.associate = (models) => {
+	// 	cnpjTable.hasMany(models.Buyer, { foreignKey: 'id', as: 'cnpjId' });
+	// };
+
 	return cnpjTable;
 };
 

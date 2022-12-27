@@ -11,6 +11,7 @@ module.exports = {
 			cnpj: {
 				type: Sequelize.STRING,
 				allowNull: false,
+				unique: true,
 			},
 			companyType: {
 				type: Sequelize.STRING,
