@@ -7,6 +7,7 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			orderNfId: {
 				type: Sequelize.STRING,
@@ -19,26 +20,26 @@ module.exports = {
 			},
 			orderPath: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 				unique: true,
 			},
 			orderFileName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 				unique: true,
 			},
 			orderOriginalName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 				unique: true,
 			},
 			emissionDate: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			pdfFile: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			emitedTo: {
 				type: Sequelize.STRING,
@@ -46,15 +47,15 @@ module.exports = {
 			},
 			nNf: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			CTE: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			value: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			createdAt: {
 				allowNull: false,
@@ -66,39 +67,39 @@ module.exports = {
 			},
 			cnpjId: {
 				type: Sequelize.INTEGER(11),
-				default: null,
+				defaultValue: null,
 			},
 			userId: {
 				type: Sequelize.INTEGER(11),
-				default: null,
+				defaultValue: null,
 			},
 			buyerId: {
 				type: Sequelize.INTEGER(11),
-				default: null,
+				defaultValue: null,
 			},
 			providerId: {
 				type: Sequelize.INTEGER(11),
-				default: null,
+				defaultValue: null,
 			},
 			orderStatusBuyer: {
 				type: Sequelize.STRING,
-				default: '0',
+				defaultValue: '0',
 			},
 			orderStatusProvider: {
 				type: Sequelize.STRING,
-				default: '0',
+				defaultValue: '0',
 			},
 			deliveryReceipt: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			cargoPackingList: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			deliveryCtrc: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 		})
 			.then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))

@@ -7,6 +7,7 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			nDup: {
 				type: Sequelize.STRING,
@@ -23,7 +24,7 @@ module.exports = {
 			availableToMarket: {
 				type: Sequelize.TINYINT(1),
 				allowNull: false,
-				default: 1,
+				defaultValue: 1,
 			},
 			createdAt: {
 				allowNull: false,

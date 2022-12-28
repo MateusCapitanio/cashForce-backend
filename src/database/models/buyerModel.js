@@ -1,11 +1,10 @@
-const { Cnpj } = require('../models');
-
 const BuyerModel = (sequelize, DataTypes) => {
 	const buyerTable = sequelize.define('Buyer', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
-			primaryKey: true
+			primaryKey: true,
+			autoIncrement: true,
 		},
 		name: DataTypes.STRING,
 		tradingName: DataTypes.STRING,
@@ -29,10 +28,10 @@ const BuyerModel = (sequelize, DataTypes) => {
 		cnpjId: DataTypes.INTEGER,
 		confirm: DataTypes.TINYINT,
 		email: DataTypes.STRING,
-	}, { timestamps: false, });
+	},);
 
 	// buyerTable.associate = (models) => {
-	// 	buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpj' });
+	// 	buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpjs' });
 	// };
 
 	return buyerTable;

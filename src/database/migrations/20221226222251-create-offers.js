@@ -7,6 +7,7 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			tax: {
 				type: Sequelize.STRING,
@@ -34,11 +35,11 @@ module.exports = {
 			},
 			paymentStatusSponsor: {
 				type: Sequelize.TINYINT(1),
-				default:0,
+				defaultValue:0,
 			},
 			paymentStatusProvider: {
 				type: Sequelize.TINYINT(1),
-				default:0,
+				defaultValue:0,
 			},
 			createdAt: {
 				allowNull: false,

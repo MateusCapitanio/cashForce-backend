@@ -4,6 +4,7 @@ const sponsorModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true,
+			autoIncrement: true,
 		},
 		name: DataTypes.STRING,
 		tradingName: DataTypes.STRING,
@@ -29,7 +30,7 @@ const sponsorModel = (sequelize, DataTypes) => {
 		situationDate: DataTypes.STRING,
 		cnpjId: DataTypes.INTEGER,
 		email: DataTypes.STRING,
-	}, {timestamps: false});
+	},);
 	return sponsorTable;
 };
 

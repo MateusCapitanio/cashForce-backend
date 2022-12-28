@@ -1,7 +1,5 @@
 'use strict';
 
-const { Cnpj } = require('../models');
-
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
 		await queryInterface.createTable('buyers', { 
@@ -9,6 +7,7 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			name: {
 				type: Sequelize.STRING,
@@ -16,75 +15,75 @@ module.exports = {
 			},
 			tradingName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			cashforceTax: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleEmail: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsiblePosition: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsiblePhone: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleMobile: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			website: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			postalCode: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			address: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			number: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			complement: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			neighborhood: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			city: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			state: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			phoneNumber: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			situation: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			situationDate: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			createdAt: {
 				allowNull: false,
@@ -96,15 +95,21 @@ module.exports = {
 			},
 			cnpjId: {
 				type: Sequelize.INTEGER(11),
-				default: null,
+				defaultValue: null,
+				onDelete: null,
+				onUpdate: 'CASCADE',
+				// references: {
+				// 	model: 'cnpjs',
+				// 	key: 'id',
+				// }
 			},
 			confirm: {
 				type: Sequelize.TINYINT(1),
-				default: 1,
+				defaultValue: 1,
 			},
 			email: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 		}).then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
 	},

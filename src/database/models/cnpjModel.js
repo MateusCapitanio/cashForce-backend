@@ -4,16 +4,18 @@ const cnpjModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			primaryKey: true,
 			allowNull: false,
+			autoIncrement: true,
 		},
 		cnpj: {
 			type: DataTypes.STRING,
 			unique: true,
 		},
 		companyType: DataTypes.STRING,
-	}, {timestamps: false});
+	},);
 
 	// cnpjTable.associate = (models) => {
-	// 	cnpjTable.hasMany(models.Buyer, { foreignKey: 'id', as: 'cnpjId' });
+	// 	cnpjTable.hasOne(models.Buyer,
+	// 		{ foreignKey: 'cnpjId', as: 'buyers' });
 	// };
 
 	return cnpjTable;

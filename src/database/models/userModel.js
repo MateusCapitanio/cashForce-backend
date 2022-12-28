@@ -4,6 +4,7 @@ const userModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true,
+			autoIncrement: true,
 		},
 		name: DataTypes.STRING,
 		email: DataTypes.STRING,
@@ -13,7 +14,7 @@ const userModel = (sequelize, DataTypes) => {
 		verificationCode: DataTypes.STRING,
 		emailChecked: DataTypes.TINYINT,
 		cashforceAdm: DataTypes.TINYINT,
-	}, {timestamps: false});
+	},);
 	return userTable;
 };
 

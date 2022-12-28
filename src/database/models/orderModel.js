@@ -4,6 +4,7 @@ const orderModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true,
+			autoIncrement: true,
 		},
 		orderNfId: DataTypes.STRING,
 		orderNumber: DataTypes.STRING,
@@ -25,7 +26,7 @@ const orderModel = (sequelize, DataTypes) => {
 		deliveryReceipt: DataTypes.STRING,
 		cargoPackingList: DataTypes.STRING,
 		deliveryCtrc: DataTypes.STRING,
-	}, {timestamps: false});
+	},);
 	return orderTable;
 };
 

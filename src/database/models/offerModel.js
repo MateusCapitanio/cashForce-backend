@@ -4,6 +4,7 @@ const offerModel = (sequelize, DataTypes) => {
 			type: DataTypes.INTEGER,
 			allowNull: false,
 			primaryKey: true,
+			autoIncrement: true,
 		},
 		tax: DataTypes.STRING,
 		tariff: DataTypes.STRING,
@@ -15,7 +16,7 @@ const offerModel = (sequelize, DataTypes) => {
 		paymentStatusProvider: DataTypes.TINYINT,
 		orderId: DataTypes.INTEGER,
 		sponsorId: DataTypes.INTEGER,
-	}, {timestamps: false});
+	},);
 	return offerTable;
 };
 

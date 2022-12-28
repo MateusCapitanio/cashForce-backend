@@ -7,94 +7,95 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			name: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			tradingName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			cashforceTax: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleName: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleEmail: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsiblePosition: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsiblePhone: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			responsibleMobile: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			website: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			postalCode: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			address: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			number: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			complement: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			neighborhood: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			city: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			state: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			bank: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			bankAgency: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			account: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			phoneNumber: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			situation: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			situationDate: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			createdAt: {
 				allowNull: false,
@@ -110,7 +111,7 @@ module.exports = {
 			},
 			email: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 		}).then(() => queryInterface.addIndex('sponsors', ['cnpjId'], { name:  'cnpjId', }));
 	},

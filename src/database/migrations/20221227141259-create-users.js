@@ -7,6 +7,7 @@ module.exports = {
 				type: Sequelize.INTEGER(11),
 				allowNull: false,
 				primaryKey: true,
+				autoIncrement: true,
 			},
 			name: {
 				type: Sequelize.STRING,
@@ -19,23 +20,23 @@ module.exports = {
 			},
 			phoneNumber: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			mobile: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			departament: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			verificationCode: {
 				type: Sequelize.STRING,
-				default: null,
+				defaultValue: null,
 			},
 			emailChecked: {
 				type: Sequelize.TINYINT(1),
-				default: 0,
+				defaultValue: 0,
 			},
 			createdAt: {
 				allowNull: false,
@@ -47,7 +48,7 @@ module.exports = {
 			},
 			cashforceAdm: {
 				type: Sequelize.TINYINT(1),
-				default: 0,
+				defaultValue: 0,
 			},
 		});
 	},
