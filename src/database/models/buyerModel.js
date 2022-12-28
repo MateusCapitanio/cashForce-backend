@@ -25,7 +25,7 @@ const BuyerModel = (sequelize, DataTypes) => {
 		phoneNumber: DataTypes.STRING,
 		situation: DataTypes.STRING,
 		situationDate: DataTypes.STRING,
-		cnpjId: DataTypes.INTEGER,
+		// cnpjId: DataTypes.INTEGER,
 		confirm: DataTypes.TINYINT,
 		email: DataTypes.STRING,
 	},);

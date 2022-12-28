@@ -93,16 +93,6 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
-			cnpjId: {
-				type: Sequelize.INTEGER(11),
-				defaultValue: null,
-				onDelete: null,
-				onUpdate: 'CASCADE',
-				// references: {
-				// 	model: 'cnpjs',
-				// 	key: 'id',
-				// }
-			},
 			confirm: {
 				type: Sequelize.TINYINT(1),
 				defaultValue: 1,
@@ -111,7 +101,7 @@ module.exports = {
 				type: Sequelize.STRING,
 				defaultValue: null,
 			},
-		}).then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
+		});
 	},
 
 	down: async (queryInterface, Sequelize) => {

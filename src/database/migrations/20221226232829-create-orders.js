@@ -101,11 +101,11 @@ module.exports = {
 				type: Sequelize.STRING,
 				defaultValue: null,
 			},
-		})
-			.then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))
-			.then(() => queryInterface.addIndex('orders', ['buyerId'], { name:  'buyerId', }))
-			.then(() => queryInterface.addIndex('orders', ['providerId'], { name:  'providerId', }))
-			.then(() => queryInterface.addIndex('orders', ['cnpjId'], { name:  'cnpjId', }));
+		});
+		// .then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))
+		// .then(() => queryInterface.addIndex('orders', ['buyerId'], { name:  'buyerId', }))
+		// .then(() => queryInterface.addIndex('orders', ['providerId'], { name:  'providerId', }))
+		// .then(() => queryInterface.addIndex('orders', ['cnpjId'], { name:  'cnpjId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {

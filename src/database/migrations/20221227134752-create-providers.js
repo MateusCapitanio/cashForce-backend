@@ -117,7 +117,8 @@ module.exports = {
 				type: Sequelize.STRING,
 				defaultValue: null,
 			},
-		}).then(() => queryInterface.addIndex('providers', ['cnpjId'], { name:  'cnpjId', }));
+		});
+		// .then(() => queryInterface.addIndex('providers', ['cnpjId'], { name:  'cnpjId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
