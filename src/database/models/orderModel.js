@@ -17,7 +17,7 @@ const orderModel = (sequelize, DataTypes) => {
 		nNf: DataTypes.STRING,
 		CTE: DataTypes.STRING,
 		value: DataTypes.STRING,
-		// cnpjId: DataTypes.INTEGER,
+		cnpjId: DataTypes.INTEGER,
 		userId: DataTypes.INTEGER,
 		buyerId: DataTypes.INTEGER,
 		providerId: DataTypes.INTEGER,

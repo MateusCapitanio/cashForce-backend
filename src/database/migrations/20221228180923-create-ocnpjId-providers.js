@@ -2,19 +2,20 @@
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.addColumn('providers', 'cnpjId', {
-			type: Sequelize.INTEGER(11),
-			defaultValue: null,
+		await queryInterface.addConstraint('providers', {
+			fields: ['cnpjId'],
+			type: 'foreign key',
+			name: 'providers_ibfk_1',
 			references: {
-				model: 'cnpjs',
-				key: 'id',
+				table: 'cnpjs',
+				field: 'id'
 			},
-			onUpdate: 'CASCADE',
 			onDelete: null,
+			onUpdate: 'cascade',
 		}).then(() => queryInterface.addIndex('providers', ['cnpjId'], { name:  'cnpjId' }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.removeColumn('providers', 'cnpjId');
+		await queryInterface.removeConstraint('providers', 'cnpjId');
 	}
 };

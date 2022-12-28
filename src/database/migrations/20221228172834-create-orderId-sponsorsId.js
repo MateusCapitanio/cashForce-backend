@@ -3,32 +3,32 @@
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return Promise.all([
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'offers',
-				'orderId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['orderId'],
+					type: 'foreign key',
+					name: 'offers_ibfk_61',
 					references: {
-						model: 'orders',
-						key: 'id',
+						table: 'orders',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'offers',
-				'sponsorId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['sponsorId'],
+					type: 'foreign key',
+					name: 'offers_ibfk_62',
 					references: {
-						model: 'sponsors',
-						key: 'id',
+						table: 'sponsors',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
 		])
@@ -38,8 +38,8 @@ module.exports = {
 
 	down: (queryInterface, Sequelize) => {
 		return Promise.all([
-			queryInterface.removeColumn('offers', 'orderId'),
-			queryInterface.removeColumn('offers', 'sponsorId')
+			queryInterface.removeConstraint('offers', 'offers_ibfk_61'),
+			queryInterface.removeConstraint('offers', 'offers_ibfk_62')
 		]);
 	}
 };

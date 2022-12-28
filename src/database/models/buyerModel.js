@@ -25,14 +25,14 @@ const BuyerModel = (sequelize, DataTypes) => {
 		phoneNumber: DataTypes.STRING,
 		situation: DataTypes.STRING,
 		situationDate: DataTypes.STRING,
-		// cnpjId: DataTypes.INTEGER,
+		cnpjId: DataTypes.STRING,
 		confirm: DataTypes.TINYINT,
 		email: DataTypes.STRING,
 	},);
 
-	// buyerTable.associate = (models) => {
-	// 	buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpjs' });
-	// };
+	buyerTable.associate = (models) => {
+		buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpjs' });
+	};
 
 	return buyerTable;
 };

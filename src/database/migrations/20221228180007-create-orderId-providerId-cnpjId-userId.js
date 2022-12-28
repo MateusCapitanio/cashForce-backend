@@ -3,60 +3,60 @@
 module.exports = {
 	up: (queryInterface, Sequelize) => {
 		return Promise.all([
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'orders',
-				'buyerId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['buyerId'],
+					type: 'foreign key',
+					name: 'orders_ibfk_139',
 					references: {
-						model: 'buyers',
-						key: 'id',
+						table: 'buyers',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'orders',
-				'providerId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['providerId'],
+					type: 'foreign key',
+					name: 'orders_ibfk_140',
 					references: {
-						model: 'providers',
-						key: 'id',
+						table: 'providers',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'orders',
-				'cnpjId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['cnpjId'],
+					type: 'foreign key',
+					name: 'orders_ibfk_141',
 					references: {
-						model: 'cnpjs',
-						key: 'id',
+						table: 'cnpjs',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
-			queryInterface.addColumn(
+			queryInterface.addConstraint(
 				'orders',
-				'userId',
 				{
-					type: Sequelize.INTEGER(11),
-					defaultValue: null,
+					fields: ['userId'],
+					type: 'foreign key',
+					name: 'orders_ibfk_142',
 					references: {
-						model: 'users',
-						key: 'id',
+						table: 'users',
+						field: 'id'
 					},
-					onUpdate: 'CASCADE',
 					onDelete: null,
+					onUpdate: 'cascade',
 				}
 			),
 		])
@@ -68,8 +68,8 @@ module.exports = {
 
 	down: (queryInterface, Sequelize) => {
 		return Promise.all([
-			queryInterface.removeColumn('orders', 'orderId'),
-			queryInterface.removeColumn('orders', 'sponsorId')
+			queryInterface.removeConstraint('orders', 'orderId'),
+			queryInterface.removeConstraint('orders', 'sponsorId')
 		]);
 	}
 };

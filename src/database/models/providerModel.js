@@ -29,7 +29,7 @@ const providerModel = (sequelize, DataTypes) => {
 		phoneNumber: DataTypes.STRING,
 		situation: DataTypes.STRING,
 		situationDate: DataTypes.STRING,
-		// cnpjId: DataTypes.INTEGER,
+		cnpjId: DataTypes.INTEGER,
 		email: DataTypes.STRING,
 	},);
 	return providerTable;

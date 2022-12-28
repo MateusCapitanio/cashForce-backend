@@ -2,19 +2,20 @@
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.addColumn('orderOptions', 'orderId', {
-			type: Sequelize.INTEGER(11),
-			defaultValue: null,
+		await queryInterface.addConstraint('orderOptions', {
+			fields: ['orderId'],
+			type: 'foreign key',
+			name: 'orderPortions_ibfk_1',
 			references: {
-				model: 'orders',
-				key: 'id',
+				table: 'orders',
+				field: 'id'
 			},
-			onUpdate: 'CASCADE',
 			onDelete: null,
+			onUpdate: 'cascade',
 		}).then(() => queryInterface.addIndex('orderOptions', ['orderId'], { name:  'orderId' }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.removeColumn('orderOptions', 'orderId');
+		await queryInterface.removeConstraint('orderOptions', 'orderPortions_ibfk_1');
 	}
 };

@@ -13,10 +13,9 @@ const cnpjModel = (sequelize, DataTypes) => {
 		companyType: DataTypes.STRING,
 	},);
 
-	// cnpjTable.associate = (models) => {
-	// 	cnpjTable.hasOne(models.Buyer,
-	// 		{ foreignKey: 'cnpjId', as: 'buyers' });
-	// };
+	cnpjTable.associate = (models) => {
+		cnpjTable.hasMany(models.Buyer, { foreignKey: 'id', as: 'cnpjId' });
+	};
 
 	return cnpjTable;
 };

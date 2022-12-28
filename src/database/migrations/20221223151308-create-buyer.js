@@ -93,6 +93,10 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
+			cnpjId: {
+				type: Sequelize.INTEGER(11),
+				defaultValue: null,
+			},
 			confirm: {
 				type: Sequelize.TINYINT(1),
 				defaultValue: 1,

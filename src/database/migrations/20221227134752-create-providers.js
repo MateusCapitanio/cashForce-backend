@@ -109,6 +109,10 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
+			cnpjId: {
+				type: Sequelize.INTEGER(11),
+				defaultValue: null,
+			},
 			email: {
 				type: Sequelize.STRING,
 				defaultValue: null,

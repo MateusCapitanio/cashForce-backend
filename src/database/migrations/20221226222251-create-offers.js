@@ -49,6 +49,14 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
+			orderId: {
+				type: Sequelize.INTEGER(11),
+				defaultValue: null,
+			},
+			sponsorId: {
+				type: Sequelize.INTEGER(11),
+				defaultValue: null,
+			},
 		});
 	},
 
