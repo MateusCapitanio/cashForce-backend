@@ -34,11 +34,7 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
-			orderId: {
-				type: Sequelize.INTEGER(11),
-				allowNull: false,
-			},
-		}).then(() => queryInterface.addIndex('orderOptions', ['orderId'], { name:  'orderId', }));
+		});
 	},
 
 	down: async (queryInterface, Sequelize) => {

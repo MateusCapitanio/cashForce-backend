@@ -2,19 +2,19 @@
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.addColumn('buyers', 'cnpjId', {
+		await queryInterface.addColumn('orderOptions', 'orderId', {
 			type: Sequelize.INTEGER(11),
 			defaultValue: null,
 			references: {
-				model: 'cnpjs',
+				model: 'orders',
 				key: 'id',
 			},
 			onUpdate: 'CASCADE',
 			onDelete: null,
-		}).then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
+		}).then(() => queryInterface.addIndex('orderOptions', ['orderId'], { name:  'orderId' }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.removeColumn('buyers', 'cnpjId');
+		await queryInterface.removeColumn('orderOptions', 'orderId');
 	}
 };

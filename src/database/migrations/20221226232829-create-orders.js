@@ -65,22 +65,6 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
-			cnpjId: {
-				type: Sequelize.INTEGER(11),
-				defaultValue: null,
-			},
-			userId: {
-				type: Sequelize.INTEGER(11),
-				defaultValue: null,
-			},
-			buyerId: {
-				type: Sequelize.INTEGER(11),
-				defaultValue: null,
-			},
-			providerId: {
-				type: Sequelize.INTEGER(11),
-				defaultValue: null,
-			},
 			orderStatusBuyer: {
 				type: Sequelize.STRING,
 				defaultValue: '0',
@@ -102,10 +86,6 @@ module.exports = {
 				defaultValue: null,
 			},
 		});
-		// .then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))
-		// .then(() => queryInterface.addIndex('orders', ['buyerId'], { name:  'buyerId', }))
-		// .then(() => queryInterface.addIndex('orders', ['providerId'], { name:  'providerId', }))
-		// .then(() => queryInterface.addIndex('orders', ['cnpjId'], { name:  'cnpjId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {

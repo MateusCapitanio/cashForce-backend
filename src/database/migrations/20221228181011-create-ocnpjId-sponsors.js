@@ -2,7 +2,7 @@
 
 module.exports = {
 	up: async (queryInterface, Sequelize) => {
-		await queryInterface.addColumn('buyers', 'cnpjId', {
+		await queryInterface.addColumn('sponsors', 'cnpjId', {
 			type: Sequelize.INTEGER(11),
 			defaultValue: null,
 			references: {
@@ -11,10 +11,10 @@ module.exports = {
 			},
 			onUpdate: 'CASCADE',
 			onDelete: null,
-		}).then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
+		}).then(() => queryInterface.addIndex('sponsors', ['cnpjId'], { name:  'cnpjId' }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.removeColumn('buyers', 'cnpjId');
+		await queryInterface.removeColumn('sponsors', 'cnpjId');
 	}
 };

@@ -105,16 +105,11 @@ module.exports = {
 				allowNull: false,
 				type: Sequelize.DATE,
 			},
-			cnpjId: {
-				allowNull: false,
-				type: Sequelize.INTEGER(11),
-			},
 			email: {
 				type: Sequelize.STRING,
 				defaultValue: null,
 			},
 		});
-		// .then(() => queryInterface.addIndex('sponsors', ['cnpjId'], { name:  'cnpjId', }));
 	},
 
 	down: async (queryInterface, Sequelize) => {
