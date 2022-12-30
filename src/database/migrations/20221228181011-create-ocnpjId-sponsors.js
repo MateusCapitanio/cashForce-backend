@@ -2,20 +2,20 @@
 
 // module.exports = {
 // 	up: async (queryInterface, Sequelize) => {
-// 		await queryInterface.addConstraint('sponsors', {
+// 		await queryInterface.addConstraint('Sponsors', {
 // 			fields: ['cnpjId'],
 // 			type: 'foreign key',
 // 			name: 'sponsors_ibfk_1',
-// 			// references: {
-// 			// 	table: 'cnpjs',
-// 			// 	field: 'id'
-// 			// },
+// 			references: {
+// 				table: 'Cnpjs',
+// 				field: 'id'
+// 			},
 // 			onDelete: null,
 // 			onUpdate: 'cascade',
-// 		}).then(() => queryInterface.addIndex('sponsors', ['cnpjId'], { name:  'cnpjId' }));
+// 		}).then(() => queryInterface.addIndex('Sponsors', ['cnpjId'], { name:  'cnpjId' }));
 // 	},
 
 // 	down: async (queryInterface, Sequelize) => {
-// 		await queryInterface.removeConstraint('sponsors', 'cnpjId');
+// 		await queryInterface.removeConstraint('Sponsors', 'cnpjId');
 // 	}
 // };

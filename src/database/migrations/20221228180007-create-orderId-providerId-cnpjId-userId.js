@@ -4,72 +4,72 @@
 // 	up: (queryInterface, Sequelize) => {
 // 		return Promise.all([
 // 			queryInterface.addConstraint(
-// 				'orders',
+// 				'Orders',
 // 				{
 // 					fields: ['buyerId'],
 // 					type: 'foreign key',
 // 					name: 'orders_ibfk_139',
-// 					// references: {
-// 					// 	table: 'buyers',
-// 					// 	field: 'id'
-// 					// },
+// 					references: {
+// 						table: 'Buyers',
+// 						field: 'id'
+// 					},
 // 					onDelete: null,
 // 					onUpdate: 'cascade',
 // 				}
 // 			),
 // 			queryInterface.addConstraint(
-// 				'orders',
+// 				'Orders',
 // 				{
 // 					fields: ['providerId'],
 // 					type: 'foreign key',
 // 					name: 'orders_ibfk_140',
-// 					// references: {
-// 					// 	table: 'providers',
-// 					// 	field: 'id'
-// 					// },
+// 					references: {
+// 						table: 'Providers',
+// 						field: 'id'
+// 					},
 // 					onDelete: null,
 // 					onUpdate: 'cascade',
 // 				}
 // 			),
 // 			queryInterface.addConstraint(
-// 				'orders',
+// 				'Orders',
 // 				{
 // 					fields: ['cnpjId'],
 // 					type: 'foreign key',
 // 					name: 'orders_ibfk_141',
-// 					// references: {
-// 					// 	table: 'cnpjs',
-// 					// 	field: 'id'
-// 					// },
+// 					references: {
+// 						table: 'Cnpjs',
+// 						field: 'id'
+// 					},
 // 					onDelete: null,
 // 					onUpdate: 'cascade',
 // 				}
 // 			),
 // 			queryInterface.addConstraint(
-// 				'orders',
+// 				'Orders',
 // 				{
 // 					fields: ['userId'],
 // 					type: 'foreign key',
 // 					name: 'orders_ibfk_142',
-// 					// references: {
-// 					// 	table: 'users',
-// 					// 	field: 'id'
-// 					// },
+// 					references: {
+// 						table: 'Users',
+// 						field: 'id'
+// 					},
 // 					onDelete: null,
 // 					onUpdate: 'cascade',
 // 				}
 // 			),
 // 		])
-// 			.then(() => queryInterface.addIndex('orders', ['userId'], { name:  'userId', }))
-// 			.then(() => queryInterface.addIndex('orders', ['buyerId'], { name:  'buyerId', }))
-// 			.then(() => queryInterface.addIndex('orders', ['providerId'], { name:  'providerId', }))
-// 			.then(() => queryInterface.addIndex('orders', ['cnpjId'], { name:  'cnpjId', }));
+// 			.then(() => queryInterface.addIndex('Orders', ['userId'], { name:  'userId', }))
+// 			.then(() => queryInterface.addIndex('Orders', ['buyerId'], { name:  'buyerId', }))
+// 			.then(() => queryInterface.addIndex('Orders', ['providerId'], { name:  'providerId', }))
+// 			.then(() => queryInterface.addIndex('Orders', ['cnpjId'], { name:  'cnpjId', }));
 // 	},
 
 // 	down: (queryInterface, Sequelize) => {
 // 		return Promise.all([
-// 			queryInterface.removeConstraint('orders', 'orderId'),
-// 			queryInterface.removeConstraint('orders', 'sponsorId')
+// 			queryInterface.removeConstraint('Orders', 'orderId'),
+// 			queryInterface.removeConstraint('Orders', 'sponsorId')
 // 		]);
 // 	}
 // };

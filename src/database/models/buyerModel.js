@@ -30,10 +30,6 @@ const BuyerModel = (sequelize, DataTypes) => {
 		email: DataTypes.STRING,
 	},);
 
-	buyerTable.associate = (models) => {
-		buyerTable.belongsTo(models.Cnpj, { foreignKey: 'cnpjId', as: 'cnpjs' });
-	};
-
 	return buyerTable;
 };
 

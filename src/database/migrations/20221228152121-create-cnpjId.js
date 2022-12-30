@@ -2,21 +2,21 @@
 
 // module.exports = {
 // 	up: async (queryInterface, Sequelize) => {
-// 		await queryInterface.addConstraint('buyers', {
+// 		await queryInterface.addConstraint('Buyers', {
 // 			fields: ['cnpjId'],
 // 			type: 'foreign key',
 // 			name: 'buyers_ibfk_1',
-// 			// references: {
-// 			// 	table: 'cnpjs',
-// 			// 	field: 'id'
-// 			// },
+// 			references: {
+// 				table: 'Cnpjs',
+// 				field: 'id'
+// 			},
 // 			onDelete: null,
 // 			onUpdate: 'cascade',
 // 		})
-// 			.then(() => queryInterface.addIndex('buyers', ['cnpjId'], { name:  'cnpjId' }));
+// 			.then(() => queryInterface.addIndex('Buyers', ['cnpjId'], { name:  'cnpjId' }));
 // 	},
 
 // 	down: async (queryInterface, Sequelize) => {
-// 		await queryInterface.removeConstraint('buyers', 'buyers_ibfk_1');
+// 		await queryInterface.removeConstraint('Buyers', 'buyers_ibfk_1');
 // 	}
 // };
