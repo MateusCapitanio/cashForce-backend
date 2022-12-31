@@ -9,10 +9,10 @@ Através da API é possível fazer requisições GET para obter informações re
 
 ## Tecnologias utilizadas:
 
-- Sequelize.
-- Express.
-- Arquitetura MSC.
-- ESlint.
+- Sequelize
+- Express
+- Arquitetura MSC
+- ESlint
 
 ## Observações:
 
