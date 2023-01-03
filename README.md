@@ -35,6 +35,7 @@ as variáveis de ambiente antes de executar, que são:
 
 - Sequelize
 - Express
+- Nodemon
 - Arquitetura MSC
 - ESlint
 - Jest
