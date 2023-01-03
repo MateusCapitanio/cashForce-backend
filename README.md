@@ -21,6 +21,12 @@ as variáveis de ambiente antes de executar, que são:
 - PORT
 - NODE_ENV (*Esta pode ser opicional pois por padrão já está definido como `development` no código*)
 
+## Populando o banco:
+
+1. `npx sequelize db:create`
+2. `npx sequelize db:migrate`
+3. `npx sequelize db:seed:all`
+
 ## Tecnologias utilizadas:
 
 - Sequelize
