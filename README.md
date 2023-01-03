@@ -23,9 +23,13 @@ as variáveis de ambiente antes de executar, que são:
 
 ## Populando o banco:
 
-1. `npx sequelize db:create`
-2. `npx sequelize db:migrate`
-3. `npx sequelize db:seed:all`
+1. `npm run drop`
+2. `npm run up`
+3. `npm run migrate`
+4. `npm run seed`
+5. `npm run constraint`
+
+*Para o banco ser criado corretamente é preciso seguir os passos acima na ordem*
 
 ## Tecnologias utilizadas:
 
@@ -41,4 +45,4 @@ Executei alguns testes e mocks simples com `Jest` para validar os retornos das r
 
 ## Observações:
 
-Durante o desenvolvimento houve divergências em relação as `Foreign Keys`, por algum motivo que eu posso ter deixado passar o sequelize não conseguia abrir as referências das respectivas chaves nas `migrations`. Então decidi executar novas `migrations` com `queryinterface.addConstraint` para definir as `Foreign Keys` e as demais definições, até então, tudo certo, as `migrations` rodaram perfeitamente e os relacionamentos foram criados, porém, no momento de rodar os `Seeders` para popular o banco, o Sequelize disparou um outro erro dizendo que não era possível atualizar ou inserir dados na `Foreign Key` correspondente. Apesar de todos os relacionamentos estarem aparentemente devidamente definidos, não estava conseguindo popular o banco, então desabilitei as `Constraints`, rodei os `Seeders`, populei o banco e só então rodei novamente as `migrations Constraints`, dessa forma, o banco foi populado corretamente.
+Durante o desenvolvimento houve divergências em relação as `Foreign Keys`, por algum motivo que eu posso ter deixado passar o sequelize não conseguia abrir as referências das respectivas chaves nas `migrations`. Decidi executar novas `migrations` com `queryinterface.addConstraint` para definir as `Foreign Keys` e as demais definições, até então, tudo certo, as `migrations` rodaram perfeitamente e os relacionamentos foram criados, porém, no momento de rodar os `seeders` para popular o banco, o Sequelize disparou um outro erro dizendo que não era possível atualizar ou inserir dados na `Foreign Key` correspondente. Para resolver esse problema fiz um pequeno 'hacking' e defini scripts acima para executar a criação do banco, as `migrations`, os `seeders` e depois as `constraints`, dessa forma o banco é populado corretamente e os relacionamentos definidos da maneira correta.
