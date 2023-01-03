@@ -43,3 +43,5 @@ const BuyerModel = (sequelize, DataTypes) => {
 };
 
 module.exports = BuyerModel;
+
+// Subindo para remoto
