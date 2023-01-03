@@ -7,7 +7,7 @@ com o banco de dados foi estruturada do zero no `Sequelize`, a conexão com o ba
 
 Através da API é possível fazer requisições GET para obter informações relacionadas a compras, status e informações de transações.
 
-### Execução da aplicação:
+## Execução da aplicação:
 
 Basta clonar o repositório à partir do comando `git clone`, fazer a instalação das dependências 
 utilizando `npm install`. Após executar a instalação das dependências, para executar a aplicação é preciso rodar o comando 
