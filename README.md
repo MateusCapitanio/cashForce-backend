@@ -31,7 +31,7 @@ as variáveis de ambiente antes de executar, que são:
 
 ## Testes:
 
-Executei alguns testes e mocks simples para validar os retornos das requisições para serem usadas no Frontend da aplicação.
+Executei alguns testes e mocks simples com `Jest` para validar os retornos das requisições `GET` a serem utilizadas no Frontend da aplicação.
 
 ## Observações:
 
