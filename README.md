@@ -41,5 +41,4 @@ Executei alguns testes e mocks simples com `Jest` para validar os retornos das r
 
 ## Observações:
 
-Durante o desenvolvimento, houve uma divergência na inserção das informações no banco com os `Seeders` em relação as `Foreign Keys`, portanto,
-foi desabilitada a checagem dos dados somente para popular o banco corretamente e fazer uso das informações necessárias.
+Durante o desenvolvimento, houve uma divergência na inserção das informações no banco com os `Seeders` em relação as `Foreign Keys`, portanto, executei algumas migrations com `queryinterface.addConstraint` para definir as `Foreign Keys` e as demais definições. Após realizar as configurações, os `Seeders` ainda estavam falhando, então desabilitei as `Foreign Keys` somente para popular o banco corretamente e fazer uso das informações necessárias.
