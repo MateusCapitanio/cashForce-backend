@@ -68,18 +68,26 @@ module.exports = {
 			cnpjId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 			userId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 			buyerId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 			providerId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 			orderstatusBuyer: {
 				type: Sequelize.STRING,

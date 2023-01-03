@@ -14,7 +14,14 @@ const userModel = (sequelize, DataTypes) => {
 		verificationCode: DataTypes.STRING,
 		emailChecked: DataTypes.TINYINT,
 		cashforceAdm: DataTypes.TINYINT,
-	},);
+	},{
+		tableName: 'Users'
+	});
+
+	userTable.associate = (models) => {
+		userTable.hasMany(models.Order, { foreignKey: "userId", as: "Orders" });
+	}
+
 	return userTable;
 };
 

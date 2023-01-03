@@ -30,7 +30,18 @@ const sponsorModel = (sequelize, DataTypes) => {
 		situationDate: DataTypes.STRING,
 		cnpjId: DataTypes.INTEGER,
 		email: DataTypes.STRING,
-	},);
+	},{
+		tableName:'Sponsors',
+	});
+
+	sponsorTable.associate = (models) => {
+		sponsorTable.belongsTo(models.Cnpj, { foreignKey: "cnpjId", as: "Sponsors" });
+	}
+
+	sponsorTable.associate = (models) => {
+		sponsorTable.hasMany(models.Offer, { foreignKey: "sponsorId", as: "Offers" });
+	}
+
 	return sponsorTable;
 };
 

@@ -28,7 +28,16 @@ const BuyerModel = (sequelize, DataTypes) => {
 		cnpjId: DataTypes.STRING,
 		confirm: DataTypes.TINYINT,
 		email: DataTypes.STRING,
-	},);
+	}, {
+		tableName: 'Buyers'
+	});
+
+	buyerTable.associate = (models) => {
+		buyerTable.hasMany(models.Order, { foreignKey: "buyerId", as: "Orders" });
+	}
+	buyerTable.associate = (models) => {
+		buyerTable.belongsTo(models.Cnpj, { foreignKey: "cnpjId", as: "Cnpjs" });
+	}
 
 	return buyerTable;
 };

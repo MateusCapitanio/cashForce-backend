@@ -11,7 +11,16 @@ const cnpjModel = (sequelize, DataTypes) => {
 			unique: true,
 		},
 		companyType: DataTypes.STRING,
-	},);
+	}, {
+		tableName: 'Cnpjs'
+	});
+
+	cnpjTable.associate = (models) => {
+		cnpjTable.hasMany(models.Order, { foreignKey: "cnpjId", as: "Orders" });
+		cnpjTable.hasMany(models.Buyer, { foreignKey: "cnpjId", as: "Buyers" });
+		cnpjTable.hasMany(models.Provider, { foreignKey: "cnpjId", as: "Providers" });
+		cnpjTable.hasMany(models.Sponsor, { foreignKey: "cnpjId", as: "Sponsors" });
+	}
 
 	return cnpjTable;
 };

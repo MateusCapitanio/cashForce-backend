@@ -1,5 +1,5 @@
 const orderOptionsModel = (sequelize, DataTypes) => {
-	const orderOptionsTable = sequelize.define('OrderOptions', {
+	const orderOptionsTable = sequelize.define('OrderOption', {
 		id: {
 			type: DataTypes.INTEGER,
 			allowNull: false,
@@ -11,7 +11,14 @@ const orderOptionsModel = (sequelize, DataTypes) => {
 		vDup: DataTypes.STRING,
 		availableToMarket: DataTypes.TINYINT,
 		orderId: DataTypes.INTEGER,
-	},);
+	}, {
+		tableName: 'OrderOptions',
+	});
+
+	orderOptionsTable.associate = (models) => {
+		orderOptionsTable.belongsTo(models.Order, { foreignKey: "orderId", as: "Orders" });
+	}
+
 	return orderOptionsTable;
 };
 

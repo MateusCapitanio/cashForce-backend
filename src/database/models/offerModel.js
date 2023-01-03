@@ -16,7 +16,15 @@ const offerModel = (sequelize, DataTypes) => {
 		paymentStatusProvider: DataTypes.TINYINT,
 		orderId: DataTypes.INTEGER,
 		sponsorId: DataTypes.INTEGER,
-	},);
+	},{
+		tableName: 'Offers'
+	});
+
+	offerTable.associate = (models) => {
+		offerTable.belongsTo(models.Order, { foreignKey: "orderId", as: "Orders" });
+		offerTable.belongsTo(models.Sponsor, { foreignKey: "sponsorId", as: "Sponsors" });
+	}
+
 	return offerTable;
 };
 

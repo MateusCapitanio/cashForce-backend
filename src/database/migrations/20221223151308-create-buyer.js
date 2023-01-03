@@ -96,6 +96,8 @@ module.exports = {
 			cnpjId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+				onDelete: null,
 			},
 			confirm: {
 				type: Sequelize.TINYINT(1),

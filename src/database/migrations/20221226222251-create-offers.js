@@ -52,10 +52,14 @@ module.exports = {
 			orderId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 			sponsorId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
+				onUpdate: 'CASCADE',
+        		onDelete: null,
 			},
 		});
 	},
