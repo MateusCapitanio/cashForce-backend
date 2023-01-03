@@ -20,11 +20,6 @@ const offerModel = (sequelize, DataTypes) => {
 		tableName: 'Offers'
 	});
 
-	offerTable.associate = (models) => {
-		offerTable.belongsTo(models.Order, { foreignKey: "orderId", as: "Orders" });
-		offerTable.belongsTo(models.Sponsor, { foreignKey: "sponsorId", as: "Sponsors" });
-	}
-
 	return offerTable;
 };
 

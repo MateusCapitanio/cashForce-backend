@@ -34,14 +34,6 @@ const sponsorModel = (sequelize, DataTypes) => {
 		tableName:'Sponsors',
 	});
 
-	sponsorTable.associate = (models) => {
-		sponsorTable.belongsTo(models.Cnpj, { foreignKey: "cnpjId", as: "Sponsors" });
-	}
-
-	sponsorTable.associate = (models) => {
-		sponsorTable.hasMany(models.Offer, { foreignKey: "sponsorId", as: "Offers" });
-	}
-
 	return sponsorTable;
 };
 

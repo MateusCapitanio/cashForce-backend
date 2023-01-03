@@ -10,8 +10,8 @@ module.exports = {
 				table: 'Orders',
 				field: 'id'
 			},
-			onDelete: null,
-			onUpdate: 'cascade',
+			onDelete: 'SET NULL',
+			onUpdate: 'CASCADE',
 		}).then(() => queryInterface.addIndex('OrderOptions', ['orderId'], { name:  'orderId' }));
 	},
 

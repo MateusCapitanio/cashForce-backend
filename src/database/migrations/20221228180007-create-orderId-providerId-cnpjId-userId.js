@@ -13,8 +13,8 @@ module.exports = {
 						table: 'Buyers',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 			queryInterface.addConstraint(
@@ -27,8 +27,8 @@ module.exports = {
 						table: 'Providers',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 			queryInterface.addConstraint(
@@ -41,8 +41,8 @@ module.exports = {
 						table: 'Cnpjs',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 			queryInterface.addConstraint(
@@ -55,8 +55,8 @@ module.exports = {
 						table: 'Users',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 		])

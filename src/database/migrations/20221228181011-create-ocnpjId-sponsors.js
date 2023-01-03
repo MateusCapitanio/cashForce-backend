@@ -10,8 +10,8 @@ module.exports = {
 				table: 'Cnpjs',
 				field: 'id'
 			},
-			onDelete: null,
-			onUpdate: 'cascade',
+			onDelete: 'SET NULL',
+			onUpdate: 'CASCADE',
 		}).then(() => queryInterface.addIndex('Sponsors', ['cnpjId'], { name:  'cnpjId' }));
 	},
 

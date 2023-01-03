@@ -112,8 +112,6 @@ module.exports = {
 			cnpjId: {
 				type: Sequelize.INTEGER(11),
 				defaultValue: null,
-				onUpdate: 'CASCADE',
-        		onDelete: null,
 			},
 			email: {
 				type: Sequelize.STRING,

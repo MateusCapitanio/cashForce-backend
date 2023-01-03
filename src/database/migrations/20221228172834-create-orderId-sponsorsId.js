@@ -13,8 +13,8 @@ module.exports = {
 						table: 'Orders',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 			queryInterface.addConstraint(
@@ -27,8 +27,8 @@ module.exports = {
 						table: 'Sponsors',
 						field: 'id'
 					},
-					onDelete: null,
-					onUpdate: 'cascade',
+					onDelete: 'SET NULL',
+					onUpdate: 'CASCADE',
 				}
 			),
 		])

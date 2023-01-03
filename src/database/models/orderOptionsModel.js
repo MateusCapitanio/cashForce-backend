@@ -15,10 +15,6 @@ const orderOptionsModel = (sequelize, DataTypes) => {
 		tableName: 'OrderOptions',
 	});
 
-	orderOptionsTable.associate = (models) => {
-		orderOptionsTable.belongsTo(models.Order, { foreignKey: "orderId", as: "Orders" });
-	}
-
 	return orderOptionsTable;
 };
 
