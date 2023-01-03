@@ -23,7 +23,7 @@ as variáveis de ambiente antes de executar, que são:
 
 ## Populando o banco:
 
-1. `npm run drop`
+1. `npm run down`
 2. `npm run up`
 3. `npm run migrate`
 4. `npm run seed`
