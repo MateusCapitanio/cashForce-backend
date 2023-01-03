@@ -27,8 +27,13 @@ as variáveis de ambiente antes de executar, que são:
 - Express
 - Arquitetura MSC
 - ESlint
+- Jest
+
+## Testes:
+
+Executei alguns testes e mocks simples para validar os retornos das requisições para serem usadas no Frontend da aplicação.
 
 ## Observações:
 
-Durante o desenvolvimento, houve uma divergência na inserção das informações no banco (`Seeders`) em relação às `Foreign Keys`, portanto,
-foi desabilitada a checagem dos dados para popular o banco corretamente e fazer uso das informações necessárias.
+Durante o desenvolvimento, houve uma divergência na inserção das informações no banco com os `Seeders` em relação as `Foreign Keys`, portanto,
+foi desabilitada a checagem dos dados somente para popular o banco corretamente e fazer uso das informações necessárias.
